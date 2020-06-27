@@ -50,23 +50,6 @@ public class GraphUtilities {
         return result;
     }
 
-    private int getIndegreeOfNodeInGraph(Graph g, int node) {
-        int indegree = 0;
-        if(node < 0 || node > g.getNumberOfNodes()) {
-            throw new IllegalArgumentException();
-        }
-        for(int i = 0; i < g.getNumberOfNodes(); i++) {
-            if(i != node) {
-                for(int j = 0; j < g.getNumberOfNeighbours(node); j++) {
-                    if(g.getNeighbour(i, j) == node) {
-                        indegree++;
-                    }
-                }
-            }
-        }
-        return indegree;
-    }
-
     public Graph minimalSpanningTree(Graph g) {
         return new MyGraph();
     }
