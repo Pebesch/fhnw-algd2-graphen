@@ -24,17 +24,19 @@ public class main_Graph{
       g.addUndirectedEdge(0, 1, 9);
       g.addUndirectedEdge(6, 1, 3);
     }else{
-      for (int i=0; i<10; ++i)  g.appendNode();
+      for (int i=0; i<7; ++i) g.appendNode();
       g.addEdge(0, 1, 1);
       g.addEdge(0, 2, 1);
       g.addEdge(0, 3, 1);
-      g.addEdge(0, 4, 1);
-      g.addEdge(0, 8, 1);
-      g.addEdge(1, 5, 1);
-      g.addEdge(1, 6, 1);
-      g.addEdge(2, 7, 1);
-      g.addEdge(2, 8, 1);
-      g.addEdge(3, 9, 1);
+      g.addEdge(1, 3, 1);
+      g.addEdge(1, 4, 1);
+      g.addEdge(2, 5, 1);
+      g.addEdge(3, 2, 1);
+      g.addEdge(3, 5, 1);
+      g.addEdge(3, 6, 1);
+      g.addEdge(4, 3, 1);
+      g.addEdge(4, 6, 1);
+      g.addEdge(6, 5, 1);
     }
     
     g.show();
