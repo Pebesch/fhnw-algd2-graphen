@@ -52,6 +52,24 @@ public class MyGraph implements Graph {
     }
 
     @Override
+    public void incrementMark(int node) {
+        if(isNodeOutOfBound(node)) {
+            throw new IllegalArgumentException("Node out of bound");
+        }
+        nodes.get(node).marker++;
+    }
+
+    @Override
+    public void decrementMark(int node) {
+        if(isNodeOutOfBound(node)) {
+            throw new IllegalArgumentException("Node out of bound");
+        }
+        if(nodes.get(node).marker > 0) {
+            nodes.get(node).marker--;
+        }
+    }
+
+    @Override
     public void unmarkNode(int node) {
         if(isNodeOutOfBound(node)) {
             throw new IllegalArgumentException("Node out of bound");
@@ -100,6 +118,7 @@ public class MyGraph implements Graph {
 
     @Override
     public void show() {
+        System.out.println("-------------------------------------------");
         for (int i = 0; i < nodes.size(); i++) {
             System.out.println("Node: " + i + " (" + (isMarked(i) ? "Markiert" : "Unmarkiert") +")");
             for (int j = 0; j < nodes.get(i).edges.size(); j++) {
